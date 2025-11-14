@@ -55,3 +55,11 @@ go run ./cmd/main.go
 ```bash
 Файл PDF с проверенными ссылками и их статусами.
 ```
+
+Пример запроса через curl с сохранением PDF в файл:
+
+```bash
+curl -X POST http://localhost:8080 \
+     -H "Content-Type: application/json" \
+     -d '{"links_list": [1,2]}' \
+     --output report.pdf
