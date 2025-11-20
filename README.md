@@ -26,7 +26,7 @@ go run ./cmd/main.go
 
 ```json
 {
-    "links": ["https://google.com", "https://github.com"]
+    "links": ["google.com", "github.com"]
 }
 ```
 Пример ответа:
@@ -62,4 +62,5 @@ go run ./cmd/main.go
 curl -X POST http://localhost:8080 \
      -H "Content-Type: application/json" \
      -d '{"links_list": [1,2]}' \
+
      --output report.pdf
