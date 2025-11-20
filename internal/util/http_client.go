@@ -85,6 +85,7 @@ var CheckURL = func(raw string) (bool, string) {
 		}
 	}
 
-	return false, "unreachable"
+	return false, "not available"
 }
+
 
