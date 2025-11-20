@@ -33,7 +33,7 @@ func normalize(raw string) (string, []string) {
 	variants := []string{
 		mainURL,
 	}
-
+//на случай таких url https://www.wikipedia.org/
 	if !strings.HasPrefix(host, "www.") {
 		withWWW := strings.Replace(mainURL, "://", "://www.", 1)
 		variants = append(variants, withWWW)
@@ -87,3 +87,4 @@ var CheckURL = func(raw string) (bool, string) {
 
 	return false, "unreachable"
 }
+
