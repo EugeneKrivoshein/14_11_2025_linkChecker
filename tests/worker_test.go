@@ -96,6 +96,7 @@ func (s *InMemoryStore) ListSets(ids []int64) ([]*models.LinkSet, error) {
 	return out, nil
 }
 
+//проверяет, что worker корректно: останавливается посреди работы, после рестарта продолжает выполнение с того же места
 func TestWorkerGracefulRestart(t *testing.T) {
 	store := NewInMemoryStore()
 
@@ -161,3 +162,4 @@ func TestWorkerGracefulRestart(t *testing.T) {
 		t.Errorf("link3 expected available, got %s", set2.Results["http://link3.com"].State)
 	}
 }
+
