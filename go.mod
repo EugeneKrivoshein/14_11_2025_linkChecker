@@ -1,4 +1,4 @@
-module 14_11_2025_linkChecker
+module github.com/EugeneKrivoshein/14_11_2025_linkChecker
 
 go 1.25.4
 

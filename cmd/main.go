@@ -1,10 +1,6 @@
 package main
 
 import (
-	"14_11_2025_linkChecker/internal/handlers"
-	"14_11_2025_linkChecker/internal/routes"
-	"14_11_2025_linkChecker/internal/store"
-	"14_11_2025_linkChecker/internal/worker"
 	"context"
 	"log"
 	"net/http"
@@ -12,6 +8,11 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/handlers"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/routes"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/store"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/worker"
 )
 
 func main() {

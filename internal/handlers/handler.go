@@ -1,10 +1,6 @@
 package handlers
 
 import (
-	"14_11_2025_linkChecker/internal/pdfgen"
-	"14_11_2025_linkChecker/internal/store"
-	"14_11_2025_linkChecker/internal/util"
-	"14_11_2025_linkChecker/models"
 	"encoding/json"
 	"io"
 	"log"
@@ -12,6 +8,11 @@ import (
 	"strconv"
 	"sync"
 	"time"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/pdfgen"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/store"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/util"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
 type Handler struct {

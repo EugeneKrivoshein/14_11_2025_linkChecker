@@ -1,12 +1,13 @@
 package worker_test
 
 import (
-	"14_11_2025_linkChecker/internal/util"
-	"14_11_2025_linkChecker/internal/worker"
-	"14_11_2025_linkChecker/models"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/util"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/worker"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
 type InMemoryStore struct {
@@ -96,7 +97,7 @@ func (s *InMemoryStore) ListSets(ids []int64) ([]*models.LinkSet, error) {
 	return out, nil
 }
 
-//проверяет, что worker корректно: останавливается посреди работы, после рестарта продолжает выполнение с того же места
+// проверяет, что worker корректно: останавливается посреди работы, после рестарта продолжает выполнение с того же места
 func TestWorkerGracefulRestart(t *testing.T) {
 	store := NewInMemoryStore()
 
@@ -162,4 +163,3 @@ func TestWorkerGracefulRestart(t *testing.T) {
 		t.Errorf("link3 expected available, got %s", set2.Results["http://link3.com"].State)
 	}
 }
-

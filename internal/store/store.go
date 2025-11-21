@@ -1,6 +1,6 @@
 package store
 
-import "14_11_2025_linkChecker/models"
+import "github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 
 type Store interface {
 	CreateSet([]string) (int64, *models.LinkSet, error)

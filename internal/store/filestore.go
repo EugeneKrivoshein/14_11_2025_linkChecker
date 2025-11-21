@@ -1,13 +1,14 @@
 package store
 
 import (
-	"14_11_2025_linkChecker/models"
 	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
 	"sync"
 	"time"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
 type FileStore struct {

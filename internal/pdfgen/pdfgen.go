@@ -1,9 +1,10 @@
 package pdfgen
 
 import (
-	"14_11_2025_linkChecker/models"
 	"bytes"
 	"fmt"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 
 	"github.com/jung-kurt/gofpdf"
 )

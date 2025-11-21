@@ -1,8 +1,9 @@
 package routes
 
 import (
-	"14_11_2025_linkChecker/internal/handlers"
 	"net/http"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/handlers"
 
 	"github.com/gorilla/mux"
 )

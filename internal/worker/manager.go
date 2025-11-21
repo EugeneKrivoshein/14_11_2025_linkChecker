@@ -1,11 +1,12 @@
 package worker
 
 import (
-	"14_11_2025_linkChecker/internal/store"
-	"14_11_2025_linkChecker/internal/util"
-	"14_11_2025_linkChecker/models"
 	"log"
 	"sync"
+
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/store"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/util"
+	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
 type Manager struct {
