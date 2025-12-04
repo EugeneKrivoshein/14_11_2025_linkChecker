@@ -4,20 +4,25 @@ import (
 	"log"
 	"sync"
 
-	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/store"
 	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/util"
 	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
+type StoreWorker interface {
+	GetSet(int64) (*models.LinkSet, error)
+	UpdateLinkResult(int64, string, models.LinkResult) error
+	ListUnfinished() ([]*models.LinkSet, error)
+}
+
 type Manager struct {
-	store   store.Store
+	store   StoreWorker
 	jobs    chan int64
 	wg      sync.WaitGroup
 	stop    chan struct{}
 	workers int
 }
 
-func NewManager(st store.Store, workers int) *Manager {
+func NewManager(st StoreWorker, workers int) *Manager {
 	m := &Manager{
 		store:   st,
 		jobs:    make(chan int64, 1000),

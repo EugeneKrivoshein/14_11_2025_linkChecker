@@ -10,17 +10,22 @@ import (
 	"time"
 
 	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/pdfgen"
-	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/store"
 	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/internal/util"
 	"github.com/EugeneKrivoshein/14_11_2025_linkChecker/models"
 )
 
+type LinkCreator interface {
+	CreateSet([]string) (int64, *models.LinkSet, error)
+	UpdateLinkResult(int64, string, models.LinkResult) error
+	ListSets([]int64) ([]*models.LinkSet, error)
+}
+
 type Handler struct {
-	store store.Store
+	store LinkCreator
 	mgr   interface{ Enqueue(int64) } //worker ставит id набора ссылок в очередь
 }
 
-func NewHandler(s store.Store, mgr interface{ Enqueue(int64) }) *Handler {
+func NewHandler(s LinkCreator, mgr interface{ Enqueue(int64) }) *Handler {
 	return &Handler{store: s, mgr: mgr}
 }
 
